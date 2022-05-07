@@ -1,9 +1,14 @@
-import Question from "./components/Question";
+import Question from "./Question";
 
 export default function Quiz() {
   return (
-    <main>
+    <form className="quiz__container">
       <Question />
-    </main>
+      <Question />
+      <Question />
+      <Question />
+      <Question />
+      <button className="btn btn__check">Check answers</button>
+    </form>
   );
 }

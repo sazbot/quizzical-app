@@ -15,11 +15,12 @@ body {
 
 .page__content {
   width: 550px;
-  height: 550px;
+  min-height: 550px;
   background-color: #f5f7fb;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2em;
 }
 
 .title__container {
@@ -59,4 +60,60 @@ body {
 .btn:focus {
   transform: scale(1.02);
   background: #626c9e;
+}
+
+.quiz__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 400px;
+  height: 90%;
+}
+
+.question__container {
+  border-bottom: 0.794239px solid #dbdef0;
+  padding-bottom: 14px;
+}
+
+.answers__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.question__title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  margin-bottom: 14px;
+}
+
+.answers__container input {
+  display: none;
+}
+
+.answers__container label {
+  border: 1px solid #293264;
+  border-radius: 0.6em;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
+  padding: 0.6em 2.5em;
+  cursor: pointer;
+  outline: none;
+  margin-right: 1em;
+}
+
+.answers__container label:hover,
+.answers__container label:focus,
+.answers__container input:checked + label {
+  transform: scale(1.05);
+  background: #d6dbf5;
+}
+
+.btn__check {
+  margin: 30px auto 0 auto;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 12px;
 }
