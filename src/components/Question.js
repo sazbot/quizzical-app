@@ -1,8 +1,7 @@
 export default function Question() {
   return (
-    <div>
-      <p>Question:</p>
-      <p>Answer:</p>
+    <div className="question__container">
+      <p className="question">How would one say goodbye in Spanish?</p>
     </div>
   );
 }
