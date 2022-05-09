@@ -1,5 +1,6 @@
 import React from "react";
 import Question from "./Question";
+import { nanoid } from "nanoid";
 
 export default function Quiz() {
   React.useEffect(() => {
@@ -8,7 +9,6 @@ export default function Quiz() {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.results);
         let questions = restructureData(data.results);
         setQuestions(questions);
       });
@@ -26,24 +26,28 @@ export default function Quiz() {
         answersArray: [
           {
             questionID: index,
+            answerID: nanoid(),
             answer: result.correct_answer,
             isCorrect: true,
             isSelected: false,
           },
           {
             questionID: index,
+            answerID: nanoid(),
             answer: result.incorrect_answers[0],
             isCorrect: false,
             isSelected: false,
           },
           {
             questionID: index,
+            answerID: nanoid(),
             answer: result.incorrect_answers[1],
             isCorrect: false,
             isSelected: false,
           },
           {
             questionID: index,
+            answerID: nanoid(),
             answer: result.incorrect_answers[2],
             isCorrect: false,
             isSelected: false,
@@ -85,28 +89,25 @@ export default function Quiz() {
     );
   });
 
-  // create handleChange function to update isSelected value set in state
   function selectAnswer(event) {
     const { name, value, type, checked } = event.target;
-    console.log(questions[name].answersArray[value]);
-    // setQuestions(prevQuestions => {
-    //   return prevQuestions.map(question => {
-    //     if (question.questionID === name) {
-    //        if (question.answersArray[value]){
+    console.log(name, value);
 
-    //        }
-
-    //     }
-    //   })
-
-    //     return {
-    //         ...prevQuestions,
-    //         [name]: type === "checkbox" ? checked : value
-    //     }
-    // })
+    // setQuestions((prevQuestions) => {
+    //   return prevQuestions.map((question) => {
+    //     return question.answersArray.map((answer) => {
+    //       if (answer.questionID === name && answer.answerID === value) {
+    //         return {
+    //           ...answer,
+    //           isSelected: true,
+    //         };
+    //       } else {
+    //         return answer;
+    //       }
+    //     });
+    //   });
+    // });
   }
-
-  // create checkAnswer function to update questionCorrect value set in state
 
   return (
     <form className="quiz__container">

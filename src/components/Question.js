@@ -12,7 +12,7 @@ export default function Question(props) {
           type="radio"
           id={answer1.answer}
           name={answer1.questionID}
-          value="0"
+          value={answer1.answerID}
           onChange={props.handleChange}
         />
         <label htmlFor={answer1.answer}>{answer1.answer}</label>
@@ -20,7 +20,7 @@ export default function Question(props) {
           type="radio"
           id={answer2.answer}
           name={answer2.questionID}
-          value="1"
+          value={answer2.answerID}
           onChange={props.handleChange}
         />
         <label htmlFor={answer2.answer}>{answer2.answer}</label>
@@ -28,7 +28,7 @@ export default function Question(props) {
           type="radio"
           id={answer3.answer}
           name={answer3.questionID}
-          value="2"
+          value={answer3.answerID}
           onChange={props.handleChange}
         />
         <label htmlFor={answer3.answer}>{answer3.answer}</label>
@@ -36,7 +36,7 @@ export default function Question(props) {
           type="radio"
           id={answer4.answer}
           name={answer4.questionID}
-          value="3"
+          value={answer4.answerID}
           onChange={props.handleChange}
         />
         <label htmlFor={answer4.answer}>{answer4.answer}</label>
